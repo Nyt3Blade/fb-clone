@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './Header';
 import Sidebar from './Sidebar';
+import Feed from "./Feed.js"
 
 function App() {
   return (
