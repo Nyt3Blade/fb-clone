@@ -3,9 +3,10 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import Feed from "./Feed.js";
 import Login from "./Login.js";
+import { useStateValue } from './StateProvider';
 
 function App() {
-  const user = null;
+  const [{user}, dispatch] = useStateValue
   return (
     <div className="app">
       {!user ? (<Login />) : (
