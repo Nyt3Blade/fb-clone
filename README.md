@@ -1,2 +1,5 @@
 # fb-clone
-Creating a facebook clone using react with the help of a youtube tutorial.
+Creating a facebook clone using react.
+
+*Login system incomplete
+*Firebase errors remaining
