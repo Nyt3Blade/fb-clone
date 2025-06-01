@@ -1,21 +1,23 @@
 import React from 'react';
 import "./Sidebar.css";
 import SidebarRow from "./SidebarRow.js";
-import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
-import EmojiFlagsIcon from "@material-ui/icons/EmojiFlags";
-import PeopleIcon from "@material-ui/icons/People";
-import ChatIcon from "@material-ui/icons/Chat";
-import StorefrontIcon from "@material-ui/icons/Storefront";
-import VideoLibraryIcon from "@material-ui/icons/VideoLibrary";
-import { ExpandMoreOutlined } from "@material-ui/icons"
-import { useStateValue } from './StateProvider';
+import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
+import EmojiFlagsIcon from "@mui/icons-material/EmojiFlags";
+import PeopleIcon from "@mui/icons-material/People";
+import ChatIcon from "@mui/icons-material/Chat";
+import StorefrontIcon from "@mui/icons-material/Storefront";
+import VideoLibraryIcon from "@mui/icons-material/VideoLibrary";
+import { ExpandMoreOutlined } from "@mui/icons-material"
 
 function Sidebar() {
-  const [{user}, dispatch] = useStateValue();
+  const defaultUser = {
+    photoURL: "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y",
+    displayName: "Guest User"
+  };
 
   return (
     <div className="sidebar">
-        <SidebarRow src={user.photoURL} title={user.displayName} />
+        <SidebarRow src={defaultUser.photoURL} title={defaultUser.displayName} />
         <SidebarRow Icon={LocalHospitalIcon} title="COVID-19 Information Center" />
         <SidebarRow Icon={EmojiFlagsIcon} title="Pages"/>
         <SidebarRow Icon={PeopleIcon} title="Friends"/>

@@ -1,58 +1,56 @@
 import React from 'react'
 import "./Header.css";
-import SearchIcon from '@material-ui/icons/Search';
-import HomeIcon from '@material-ui/icons/Home';
-import FlagIcon from '@material-ui/icons/Flag';
-import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
-import StorefrontIcon from '@material-ui/icons/Storefront';
-import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
-import { Avatar, IconButton } from '@material-ui/core';
-import AddIcon from '@material-ui/icons/Add';
-import ForumIcon from '@material-ui/icons/Forum';
-import NotificationsActiveIcon from '@material-ui/icons/NotificationsActive';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { useStateValue } from './StateProvider';
+import SearchIcon from '@mui/icons-material/Search';
+import HomeIcon from '@mui/icons-material/Home';
+import FlagIcon from '@mui/icons-material/Flag';
+import SubscriptionsIcon from '@mui/icons-material/Subscriptions';
+import StorefrontIcon from '@mui/icons-material/Storefront';
+import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
+import { Avatar, IconButton } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import ForumIcon from '@mui/icons-material/Forum';
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 function Header() {
-  const [{user}, dispatch] = useStateValue();
-  return (
-  <div className='header'>
-    
-    <div className="header__left">
-      
-      <img src="https://cdn.iconscout.com/icon/free/png-64/facebook-logo-2019-1597680-1350125.png" alt="Logo" />
-      <div className='header__input'>
-        <SearchIcon />
-        <input placeholder="Search here" type='text'></input>
-      </div>
-    </div>
+  const defaultUser = {
+    photoURL: "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y",
+    displayName: "Guest User"
+  };
 
-    <div className="header__middle">
+  return (
+    <div className='header'>
+      <div className="header__left">
+        <img src="https://cdn.iconscout.com/icon/free/png-64/facebook-logo-2019-1597680-1350125.png" alt="Logo" />
+        <div className='header__input'>
+          <SearchIcon />
+          <input placeholder="Search Facebook" type='text'></input>
+        </div>
+      </div>
+
+      <div className="header__middle">
+        <div className="header_option header_option--active">
+          <HomeIcon fontSize='large'/>
+        </div>
+        <div className="header_option">
+          <FlagIcon fontSize='large'/>
+        </div>
+        <div className="header_option">
+          <SubscriptionsIcon fontSize='large'/>
+        </div>
+        <div className="header_option">
+          <StorefrontIcon fontSize='large'/>
+        </div>
+        <div className="header_option">
+          <SupervisedUserCircleIcon fontSize='large'/>
+        </div>
+      </div>
       
-      <div className="header_option
-      header_option--active">
-        <HomeIcon fontSize='large'/>
-      </div>
-      <div className="header_option">
-        <FlagIcon fontSize='large'/>
-      </div>
-      <div className="header_option">
-        <SubscriptionsIcon fontSize='large'/>
-      </div>
-      <div className="header_option">
-        <StorefrontIcon fontSize='large'/>
-      </div>
-      <div className="header_option">
-        <SupervisedUserCircleIcon fontSize='large'/>
-      </div>
-    </div>
-    
-    <div className="header__right">
-      
-      <div className="header_info">
-        <Avatar src={user.photoURL} />
-        <h4>{user.displayName}</h4>
-      </div>
+      <div className="header__right">
+        <div className="header_info">
+          <Avatar src={defaultUser.photoURL} />
+          <h4>{defaultUser.displayName}</h4>
+        </div>
 
         <IconButton>
           <AddIcon />
@@ -70,7 +68,7 @@ function Header() {
           <ExpandMoreIcon />
         </IconButton>
       </div>
-  </div>
+    </div>
   );
 }
 

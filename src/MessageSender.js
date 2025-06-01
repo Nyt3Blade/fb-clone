@@ -1,9 +1,9 @@
-import { Avatar } from '@material-ui/core';
+import { Avatar } from '@mui/material';
 import React, {useState} from 'react';
 import "./MessageSender.css";
-import VideocamIcon from "@material-ui/icons/Videocam";
-import PhotoLibraryIcon from "@material-ui/icons/PhotoLibrary";
-import InsertEmoticonIcon from "@material-ui/icons/InsertEmoticon";
+import VideocamIcon from "@mui/icons-material/Videocam";
+import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary";
+import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 
 function MessageSender() {
 

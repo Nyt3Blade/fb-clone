@@ -1,10 +1,10 @@
-import { Avatar } from '@material-ui/core'
+import { Avatar } from '@mui/material'
 import React from 'react'
-import ThumbUpIcon from "@material-ui/icons/ThumbUp";
-import ChatBubbleOutlineIcon from "@material-ui/icons/ChatBubbleOutline";
-import NearMeIcon from "@material-ui/icons/NearMe"
-import AccountCircleIcon from "@material-ui/icons/AccountCircle"
-import { ExpandMoreOutlined } from "@material-ui/icons";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
+import NearMeIcon from "@mui/icons-material/NearMe"
+import AccountCircleIcon from "@mui/icons-material/AccountCircle"
+import { ExpandMoreOutlined } from "@mui/icons-material";
 import "./Post.css"
 
 function Post({profilePic, image, username, timestamp, message}) {
